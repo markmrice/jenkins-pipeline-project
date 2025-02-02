@@ -21,3 +21,6 @@ def dispatchOrders() {
     // Mocked step
     new File('logs/dispatch_orders.log').text = "Dispatched orders and updated eBay."
 }
+
+// Ensure the methods are available when the script is loaded
+return this

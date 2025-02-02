@@ -5,32 +5,32 @@ pipeline {
         stage('Fetch Orders') {
             steps {
                 script {
-                    load 'scripts/entrypoints.groovy'
-                    fetchOrders()
+                    def entrypoints = load 'scripts/entrypoints.groovy'
+                    entrypoints.fetchOrders()
                 }
             }
         }
         stage('Generate Postage CSV') {
             steps {
                 script {
-                    load 'scripts/entrypoints.groovy'
-                    generatePostageCSV()
+                    def entrypoints = load 'scripts/entrypoints.groovy'
+                    entrypoints.generatePostageCSV()
                 }
             }
         }
         stage('Create Postage') {
             steps {
                 script {
-                    load 'scripts/entrypoints.groovy'
-                    createPostage()
+                    def entrypoints = load 'scripts/entrypoints.groovy'
+                    entrypoints.createPostage()
                 }
             }
         }
         stage('Dispatch Orders') {
             steps {
                 script {
-                    load 'scripts/entrypoints.groovy'
-                    dispatchOrders()
+                    def entrypoints = load 'scripts/entrypoints.groovy'
+                    entrypoints.dispatchOrders()
                 }
             }
         }
